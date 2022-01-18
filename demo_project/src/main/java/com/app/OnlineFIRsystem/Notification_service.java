@@ -29,7 +29,7 @@ public class Notification_service {
         msg.setTo(complaint.getEmail());
         msg.setFrom("pavankumarpatilnaruto@gmail.com");
 
-        msg.setSubject("Complaint progress");
+        msg.setSubject("Complaint ");
         msg.setText(complaint.getName()+" "+complaint.getLastname()+"Comaplaint Status is "+complaint.getStatus());
 
         javaMailSender.send(msg);
