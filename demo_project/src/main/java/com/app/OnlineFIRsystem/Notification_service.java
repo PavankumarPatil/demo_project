@@ -48,7 +48,7 @@ public class Notification_service {
         msg.setTo(ememergencyComplaint.getEmailid());
         msg.setFrom("pratikmahalle@gmail.com");
 
-        msg.setSubject("Complaint progress");
+        msg.setSubject("Complaint ");
         msg.setText(ememergencyComplaint.getName()+"Comaplaint Status is "+ememergencyComplaint.getStatus());
 
         javaMailSender.send(msg);
