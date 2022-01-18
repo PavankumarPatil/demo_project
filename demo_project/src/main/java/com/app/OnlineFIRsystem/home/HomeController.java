@@ -1,0 +1,26 @@
+package com.app.OnlineFIRsystem.home;
+
+import com.app.OnlineFIRsystem.complaint.ComplaintServiceImpl;
+import com.app.OnlineFIRsystem.crimes.CrimeServiceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+
+    @Autowired
+    CrimeServiceImpl crimeService;
+
+    @Autowired
+    ComplaintServiceImpl complaintService;
+
+    @GetMapping("/")
+    public String HomeRoute(Model model) {
+        model.addAttribute("crimes", crimeService.findAllCrime());
+        return "home";
+    }
+
+}
